@@ -1,0 +1,47 @@
+---
+title: Test Chapters Collection
+---
+
+
+<h2>site.chapters loop</h2>
+
+<ul>
+{% for chapter in site.chapters_iii %}
+  <li>{{ chapter.title }}
+       -- name: {{ chapter.name }}  (path: {{ chapter.path }})
+          part: {{ chapter.part }}
+  </li>
+{% endfor %}
+</ul>
+
+
+<h2>site.chapters.docs loop</h2>
+
+<ul>
+{% for doc in site.chapters_iii.docs %}
+  <li>path:           {{ doc.path }}         <br>
+      relative_path:  {{ doc.relative_path }}
+  </li>
+{% endfor %}
+</ul>
+
+
+<p>
+    Try group_by part
+</p>
+
+<h2>site.chapters | group_by: "part"</h2>
+
+{% assign chapters_by_part = site.chapters_iii | group_by:"part" %}
+{% for part in chapters_by_part %}
+<h3>part: {{ part.name }}</h3>
+<ul>
+  {% for chapter in part.items %}
+  <li>{{ chapter.title }}
+       -- name: {{ chapter.name }}  (path: {{ chapter.path }})
+  </li>    
+  {% endfor %}
+</ul>
+{% endfor %}
+
+

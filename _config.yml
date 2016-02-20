@@ -1,0 +1,28 @@
+
+########
+# more settings
+
+collections:
+  chapters_i:
+    output: false
+  chapters_iii:
+    output: false
+
+
+# markdown: kramdown
+
+#kramdown:
+#  input: GFM
+#  hard_wrap: false
+#  auto_ids: true
+
+
+exclude:
+- README.md
+- NOTES.md
+- .gitignore
+- Gemfile
+- Gemfile.lock
+
+# safe: true
+# lsi: false

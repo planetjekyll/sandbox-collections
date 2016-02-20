@@ -1,0 +1,41 @@
+---
+title: Test Chapters Collection
+---
+
+
+<h2>site.chapters loop</h2>
+
+<ul>
+{% for chapter in site.chapters_i %}
+  <li>{{ chapter.title }}
+       -- name: {{ chapter.name }}  (path: {{ chapter.path }})
+  </li>
+{% endfor %}
+</ul>
+
+
+<h2>site.chapters.docs loop</h2>
+
+<ul>
+{% for doc in site.chapters_i.docs %}
+  <li>path:           {{ doc.path }}         <br>
+      relative_path:  {{ doc.relative_path }}
+  </li>
+{% endfor %}
+</ul>
+
+
+<!-- files is array of **static** files ?? -->
+
+<h2>site.chapters.files loop</h2>
+
+<ul>
+{% for file in site.chapters_i.files %}
+  <li>{{ file.path }}</li>
+{% endfor %}
+</ul>
+
+
+<h2>Dump site.chapters</h2>
+
+{{ site.chapters_i | jsonify }}

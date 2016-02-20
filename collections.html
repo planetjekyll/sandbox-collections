@@ -1,0 +1,42 @@
+---
+title: Test Collections
+---
+
+
+<h2>site.collections loop</h2>
+
+{% for collection in site.collections %}
+ <b>{{collection.label}}</b><br>
+  directory: {{ collection.directory }} <br>
+  relative_directory: {{ collection.relative_directory }}<br>
+  
+  files:<br>
+  <ul>
+    {% for file in collection.files %}
+    <li>{{ file.path }}</li>
+    {% endfor %}
+  </ul>
+
+  entries:<br>
+  <ul>
+    {% for file in collection.entries %}
+    <li>{{ file.path }}</li>
+    {% endfor %}
+  </ul>
+
+{% endfor %}
+
+
+<h2>site.collections docs loop</h2>
+
+{% for collection in site.collections %}
+<b>{{collection.label}}</b>
+
+    {% for doc in collection.docs %}
+    <ul>
+      <li>path:          {{ doc.path }}</li>
+      <li>relative_path: {{ doc.relative_path }}</li>
+    </ul>
+    {% endfor %}
+
+{% endfor %}
